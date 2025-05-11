@@ -1,0 +1,653 @@
+/* 1. تعيين الخطوط العامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+/* تنسيق شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+}
+
+/* الشعار على اليسار */
+.navbar .logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo {
+  text-decoration: none; /* يشيل السطر */
+  color: inherit; /* يخلي اللون زي النص العادي */
+  font-weight: bold; /* اختياري للتأكيد على الشكل */
+}
+
+
+/* قائمة الروابط */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.nav-list a:hover {
+  background-color: #0a19a7;
+  color: #fff;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/* تنسيق قسم البانر */
+/* تنسيق البانر بخلفية صورة */
+.page-banner {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.page-banner {
+  position: relative;
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  overflow: hidden; /* مهم عشان الطبقات الإضافية ما تطلعش برا */
+}
+
+.page-banner::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* تغطية شفافة وسطية */
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* لتظهر الكتابة فوق التعتيم */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.banner-content h1 {
+  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 3. التنسيق العام للمحتوى */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+/* تنسيق قسم الشركاء */
+.partners {
+  text-align: center;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+  margin-top: 3em;
+}
+
+.partners .logos {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.partners .logos img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.partners .logos img:hover {
+  transform: scale(1.1); /* تكبير الصورة عند التمرير عليها */
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>index.html home  الصفحه الرئيسيه>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+/*قسم features المميزات*/
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.features div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.features h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.features p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* قسم Hero */
+.hero {
+  background-color: #f8f9fa;
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero h3 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* زر call-to-action */
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+/*----ما يقوله عملائنا -----*/
+
+.say {
+  background-color: #f1f1f1;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.say h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.say {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.say p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.say span {
+  display: block;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+
+/*----الآن-----*/
+
+
+.cta {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta .btn {
+  background-color: white;
+  color: #007bff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta .btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>track.html  تنسيق صفحة تتبع الشحنة >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+
+/* 4. تنسيق صفحة تتبع الشحنة */
+.track-section {
+  text-align: center;
+}
+
+.track-section h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.track-section p {
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+.track-section input[type="text"],
+.track-section button {
+  padding: 0.75em;
+  font-size: 1.1em;
+  margin: 0.5em 0;
+}
+
+.track-section button {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.track-section button:hover {
+  background-color: #f9a826;
+}
+
+#tracking-result {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* 9. التنسيق الخاص بالفيديو */
+.track-video {
+  max-width: 800px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.track-video h2 {
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.track-video video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>send.html  تنسيق صفحة ارسال الطرد >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+
+
+/* 5. تنسيق صفحة إرسال الطرد */
+.send-section {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.send-section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.send-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.send-section label {
+  font-weight: bold;
+}
+
+.send-section input,
+.send-section select {
+  padding: 0.75em;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+.send-section button {
+  padding: 0.75em;
+  font-size: 1.1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.send-section button:hover {
+  background-color: #3f0a94;
+}
+
+#send-result {
+  margin-top: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>support.html  تنسيق صفحة الدعم  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+
+/* 6. تنسيق صفحة الدعم الفني */
+.support-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.support-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.support-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.option {
+  background-color: #f9f9f9;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  max-width: 300px;
+  flex: 1;
+}
+
+.option h3 {
+  color: #007bff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.option p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.option a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.option a:hover {
+  color: #0056b3;
+}
+
+/* Form styling */
+form#support-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form#support-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+form#support-form input,
+form#support-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form#support-form button {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#support-form button:hover {
+  background-color: #0056b3;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>faq.html  تنسيق صفحة الاسئله الشائعه  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+
+/* 7. تنسيق صفحة الأسئلة الشائعة */
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #007bff;
+}
+
+.faq-item {
+  background-color: #f9f9f9;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>about us.html  تنسيق صفحة من نحن  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+
+/* 8. تنسيق صفحة من نحن */
+/* Team Section */
+.team-section {
+  padding: 4rem 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #004080;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.team-member {
+  background-color: #f0f8ff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #004080;
+}
+
+.team-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+}
+
+
+
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  الفوتر>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
+
+/* 10. تنسيق الفوتر */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+  color: #00bfff;
+}
+
+footer p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}

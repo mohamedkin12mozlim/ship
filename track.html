@@ -27,7 +27,7 @@
 
 <!-- قسم البانر -->
  <!-- قسم البانر بخلفية صورة وتأثيرات AOS -->
-<section class="page-banner" data-aos="zoom-in" data-aos-duration="1200">
+<section class="banner" data-aos="zoom-in" data-aos-duration="1200">
   <div class="banner-content" data-aos="fade-down" data-aos-delay="300">
     <h1>Welcome to ship</h1>
     <p data-aos="fade-up" data-aos-delay="500">Delivering your promise, one package at a time.</p>
@@ -38,27 +38,28 @@
   </header>
   
 
-  <main>
-    <section class="track-video">
-  <h2>   Explanatory video on shipment tracking </h2>
-  <video width="100%" controls>
-    <source src="track.mp4" type="video/mp4" />
-  </video>
-</section>
+ <main>
+  <!-- قسم الفيديو التوضيحي -->
+  <section class="track-video">
+    <h2>Explanatory video on shipment tracking</h2>
+    <video width="100%" controls>
+      <source src="track.mp4" type="video/mp4" />
+    </video>
+  </section>
 
+  <!-- قسم تتبع الشحنة -->
+  <section class="track-section">
+    <h2>Track Your Shipment</h2>
+    <p>Stay updated with your delivery status</p>
 
+    <form id="track-form" action="send.html">
+      <label >Enter Tracking Number</label>
+      <input type="text" id="tracking-number" name="tracking-number" required />
+      <button type="submit">Track</button>
+    </form>
+  </section>
+</main>
 
-    <section class="track-section">
-      <h2>Track Your Shipment</h2>
-      <p>Stay updated with your delivery status</p>
-      <form id="track-form">
-        <label for="tracking-number">Enter Tracking Number</label>
-        <input type="text" id="tracking-number" name="tracking-number" required />
-        <button type="submit">Track</button>
-      </form>
-      <div id="tracking-result"></div>
-    </section>
-  </main>
 
   <footer>
   <p class="footer-text">ship - Delivering happiness globally, one parcel at a time.</p>

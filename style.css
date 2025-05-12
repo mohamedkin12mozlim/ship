@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;   /*ضبط بكسلات المربعات والعناصر*/
 }
 
 body {
@@ -11,17 +11,32 @@ body {
   color: #333;
   line-height: 1.6;
 }
-/* تنسيق شريط التنقل */
-.navbar {
+
+/*  التنسيق العام للصفحات كلها */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+/*--------------------------------------------------------------------------*/
+/* تنسيق شريط اللي فوق */
+
+  .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #222;
+  background-color: #010619c6;
   padding: 10px 30px;
   flex-wrap: wrap;
 }
 
-/* الشعار على اليسار */
 .navbar .logo {
   color: white;
   font-size: 1.8rem;
@@ -31,13 +46,13 @@ body {
 .logo {
   text-decoration: none; /* يشيل السطر */
   color: inherit; /* يخلي اللون زي النص العادي */
-  font-weight: bold; /* اختياري للتأكيد على الشكل */
+  font-weight: bold; /* اختياري للتأكيد على الشكل */   
 }
+
 
 
 /* قائمة الروابط */
 .nav-list {
-  list-style: none;
   display: flex;
   gap: 25px;
   margin: 0;
@@ -66,26 +81,18 @@ body {
 
 /* تنسيق قسم البانر */
 /* تنسيق البانر بخلفية صورة */
-.page-banner {
-  background-image: url('banner.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-}
 
-.page-banner {
+
+.banner {
   position: relative;
   background-image: url('banner.jpg');
   background-size: cover;
   background-position: center;
   padding: 100px 20px;
   text-align: center;
-  overflow: hidden; /* مهم عشان الطبقات الإضافية ما تطلعش برا */
 }
 
-.page-banner::before {
+.banner::before {
   content: "";
   position: absolute;
   width: 60%;
@@ -93,25 +100,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5); /* تغطية شفافة وسطية */
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* لون الخلفيه الشفافه*/
   border-radius: 15px;
-}
-
-/* لتظهر الكتابة فوق التعتيم */
-.banner-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-}
-
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  background: transparent;
-  padding: 40px;
-  border-radius: 10px;
 }
 
 .banner-content h1 {
@@ -119,80 +109,13 @@ body {
   font-size: 2.8rem;
   margin-bottom: 20px;
 }
-
 .banner-content p {
   color: #ccc;
   font-size: 1.2rem;
 }
 /*-----------------------------------------------------------------------------------*/
-/* 3. التنسيق العام للمحتوى */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2em 1em;
-  background-color: #fff;
-  border-radius: 10px;
-}
 
-section {
-  margin-bottom: 2em;
-}
-/*------------------------------------------------------------------------------------------------------------*/
-/* تنسيق قسم الشركاء */
-.partners {
-  text-align: center;
-  padding: 2em 0;
-  background-color: #f9f9f9;
-  margin-top: 3em;
-}
-
-.partners .logos {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  flex-wrap: wrap;
-}
-
-.partners .logos img {
-  width: 100px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.partners .logos img:hover {
-  transform: scale(1.1); /* تكبير الصورة عند التمرير عليها */
-}
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>index.html home  الصفحه الرئيسيه>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
-
-/*قسم features المميزات*/
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
-}
-
-.features div {
-  flex: 1 1 250px;
-  max-width: 300px;
-  padding: 20px;
-}
-
-.features h4 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.features p {
-  font-size: 1rem;
-  color: #666;
-}
 
 /* قسم Hero */
 .hero {
@@ -216,51 +139,96 @@ section {
 }
 
 /* زر call-to-action */
-.btn {
+.button {
   display: inline-block;
   background-color: #007bff;
   color: white;
   padding: 12px 25px;
-  border-radius: 25px;
+  border-radius: 250px;
   text-decoration: none;
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.button:hover {
   background-color: #0056b3;
 }
+/*-----------------------*/
+/*قسم good المميزات*/
 
-
-/*----ما يقوله عملائنا -----*/
-
-.say {
-  background-color: #f1f1f1;
+.good {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
   padding: 60px 20px;
+  background-color: #ffffffc0;
   text-align: center;
+  flex-wrap: wrap;
 }
 
-.say h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 30px;
+.good div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 20px;
 }
+
+.good h4 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.good p {
+  font-size: 1rem;
+  color: #1f1b9a;
+}
+/*-----------------------*/
+/* تنسيق قسم الشركاء */
+.partners {
+  text-align: center;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+  margin-top: 3em;
+}
+
+.partners .logos {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.partners .logos img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.partners .logos img:hover {
+  transform: scale(1.1); /*  تكبير الصوره لما اقرب الماوس بنسيه 10 ف الميه م الاصل*/
+}
+/*-----------------------*/
+/*----ما يقوله عملائنا -----*/
 
 .say {
   max-width: 600px;
   margin: 0 auto 25px;
-  background-color: #ffffff;
+  background-color: #f6f6f688;
+  text-align: center;
   padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(238, 5, 5, 0.05);
 }
-
+.say h2 {
+  font-size: large;
+  color: #333;
+  margin-bottom: 30px;
+}
 .say p {
   font-size: 1.1rem;
   color: #555;
   margin-bottom: 10px;
 }
-
 .say span {
   display: block;
   font-size: 0.95rem;
@@ -268,22 +236,22 @@ section {
 }
 
 
-/*----الآن-----*/
+/*---- اشحن الآن ----*/
 
 
-.cta {
+.start {
   background-color: #007bff;
   color: white;
   text-align: center;
   padding: 60px 20px;
 }
 
-.cta h3 {
+.start h3 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.cta .btn {
+.start .button {
   background-color: white;
   color: #007bff;
   padding: 12px 25px;
@@ -293,7 +261,7 @@ section {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.cta .btn:hover {
+.start .button:hover {
   background-color: #0056b3;
   color: white;
 }
@@ -305,7 +273,25 @@ section {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>track.html  تنسيق صفحة تتبع الشحنة >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
 
 
-/* 4. تنسيق صفحة تتبع الشحنة */
+/*  التنسيق الخاص بالفيديو */
+.track-video {
+  max-width: 800px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.track-video h2 {
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.track-video video {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(140, 21, 21, 0.1);
+}
+
+/*  تنسيق صفحة تتبع الشحنة */
 .track-section {
   text-align: center;
 }
@@ -320,6 +306,7 @@ section {
   margin-bottom: 1.5em;
 }
 
+
 .track-section input[type="text"],
 .track-section button {
   padding: 0.75em;
@@ -330,37 +317,12 @@ section {
 .track-section button {
   background-color: #333;
   color: white;
-  border: none;
-  cursor: pointer;
 }
 
 .track-section button:hover {
-  background-color: #f9a826;
+  background-color: #df1a08fc;
 }
 
-#tracking-result {
-  margin-top: 1em;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-/* 9. التنسيق الخاص بالفيديو */
-.track-video {
-  max-width: 800px;
-  margin: 2em auto;
-  text-align: center;
-}
-
-.track-video h2 {
-  margin-bottom: 1em;
-  color: #333;
-}
-
-.track-video video {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>send.html  تنسيق صفحة ارسال الطرد >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
@@ -411,12 +373,6 @@ section {
   background-color: #3f0a94;
 }
 
-#send-result {
-  margin-top: 1em;
-  font-weight: bold;
-  text-align: center;
-}
-
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>support.html  تنسيق صفحة الدعم  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-*/
 
 
@@ -443,10 +399,9 @@ section {
 }
 
 .option {
-  background-color: #f9f9f9;
+  background-color: #c7cfd4;
   padding: 25px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   max-width: 300px;
   flex: 1;
 }
@@ -459,19 +414,19 @@ section {
 
 .option p {
   font-size: 0.95rem;
-  color: #555;
+  color: #000000;
   margin-bottom: 15px;
 }
 
 .option a {
   text-decoration: none;
-  color: #007bff;
+  color: #0a427f;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .option a:hover {
-  color: #0056b3;
+  color: #000000;
 }
 
 /* Form styling */
@@ -531,17 +486,17 @@ form#support-form button:hover {
 }
 
 .faq-item {
-  background-color: #f9f9f9;
+  background-color: #d3d3e2;
   padding: 25px 20px;
   margin-bottom: 20px;
-  border-radius: 8px;
+  border-radius: 25px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .faq-item h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #ae9595;
 }
 
 .faq-item p {
@@ -584,13 +539,7 @@ form#support-form button:hover {
   transform: translateY(-5px);
 }
 
-.team-member img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
+
 
 .team-member h3 {
   font-size: 1.25rem;
@@ -643,11 +592,11 @@ footer {
 }
 
 .footer-nav li a:hover {
-  color: #00bfff;
+  color: #7773c4;
 }
 
 footer p {
   margin: 10px 0 0;
   font-size: 0.9rem;
-  color: #aaa;
+  color: #6f92c9;
 }
